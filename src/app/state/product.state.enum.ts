@@ -3,3 +3,6 @@ export enum ProductStateEnum {
     LOADED,
     ERROR
 }
+export enum ProductActionType{
+    
+}

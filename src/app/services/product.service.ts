@@ -8,7 +8,7 @@ import { Product } from '../model/product.model';
   providedIn: 'root'
 })
 export class ProductService {
-   host = (Math.random()>0.1)?environment.hostDB:environment.hostDBUnreachable;
+   host = (Math.random()>0.01)?environment.hostDB:environment.hostDBUnreachable;
   
   constructor(private http: HttpClient) { }
 

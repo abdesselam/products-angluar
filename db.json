@@ -5,7 +5,7 @@
       "name": "phone",
       "price": 100,
       "quantity": 255,
-      "selected": false,
+      "selected": true,
       "available": true
     },
     {

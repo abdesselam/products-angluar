@@ -72,4 +72,7 @@ export class ProductsComponent implements OnInit {
   editProductsOnSelected(product : Product) {
     this.router.navigate([`/editProducts/${product.id}`])
   }
+  onQctionEvent($event: any){
+
+  }
 }
