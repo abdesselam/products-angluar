@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { observable, Observable, of } from 'rxjs';
 import { Product } from 'src/app/model/product.model';
 import { ProductService } from 'src/app/services/product.service';
-import { ProductStateDate } from 'src/app/state/product.state.data';
-import { ProductStateEnum } from 'src/app/state/product.state.enum';
+import { ActionEvent, ProductStateDate } from 'src/app/state/product.state.data';
+import { ProductActionType, ProductStateEnum } from 'src/app/state/product.state.enum';
 
 import { map, catchError, startWith } from 'rxjs/operators';
 import {NgForm} from '@angular/forms';
@@ -72,7 +72,16 @@ export class ProductsComponent implements OnInit {
   editProductsOnSelected(product : Product) {
     this.router.navigate([`/editProducts/${product.id}`])
   }
-  onQctionEvent($event: any){
-
+  onQctionEvent($event: ActionEvent){
+          switch ($event.type) {
+            case ProductActionType.GET_ALL_PRODUCTS:this.getAllProducts();break;
+            case ProductActionType.GET_SELECTED_PRODUCTS:this.getProductsSelected();break;
+            case ProductActionType.GET_AVAIBLE_PRODUCTS:this.getProductsAvialable();break;
+            case ProductActionType.SEARCH_PRODUCTS:this.getProductsSearch($event.payload);break;
+            case ProductActionType.GET_NEW_PRODUCTS:this.addProductsOnSelected();break;
+          
+            default:
+              break;
+          }
   }
 }
