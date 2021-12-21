@@ -5,12 +5,12 @@
       "name": "phone",
       "price": 100,
       "quantity": 255,
-      "selected": true,
+      "selected": false,
       "available": true
     },
     {
       "id": 2,
-      "name": "tv",
+      "name": "tv plasma",
       "price": "122",
       "quantity": 155,
       "selected": true,
@@ -23,6 +23,22 @@
       "quantity": 100,
       "selected": false,
       "available": true
+    },
+    {
+      "name": "fff",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": 4
+    },
+    {
+      "name": "MIHOUBI Abdesselam",
+      "price": 0,
+      "quantity": 0,
+      "selected": false,
+      "available": true,
+      "id": 5
     }
   ]
 }

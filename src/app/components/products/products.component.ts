@@ -72,13 +72,17 @@ export class ProductsComponent implements OnInit {
   editProductsOnSelected(product : Product) {
     this.router.navigate([`/editProducts/${product.id}`])
   }
-  onQctionEvent($event: ActionEvent){
+  onActionEvent($event: ActionEvent){
+    console.log('---------search----',$event)
           switch ($event.type) {
             case ProductActionType.GET_ALL_PRODUCTS:this.getAllProducts();break;
             case ProductActionType.GET_SELECTED_PRODUCTS:this.getProductsSelected();break;
             case ProductActionType.GET_AVAIBLE_PRODUCTS:this.getProductsAvialable();break;
             case ProductActionType.SEARCH_PRODUCTS:this.getProductsSearch($event.payload);break;
             case ProductActionType.GET_NEW_PRODUCTS:this.addProductsOnSelected();break;
+            case ProductActionType.SELECT_PRODUCTS:this.getProductsOnSelected($event.payload);break;
+            case ProductActionType.EDIT_PRODUCTS:this.deleteProductsOnSelected($event.payload);break;
+            case ProductActionType.DELETE_PRODUCTS:this.editProductsOnSelected($event.payload);break;
           
             default:
               break;

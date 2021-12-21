@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActionEvent } from 'src/app/state/product.state.data';
 import { ProductActionType } from 'src/app/state/product.state.enum';
 
@@ -27,8 +28,9 @@ getProductsAvialable(){
 addProductsOnSelected(){
   this.productEventEmitter.emit({type:ProductActionType.GET_NEW_PRODUCTS})
 }
-getProductsSearch(dataForm:any){
-  this.productEventEmitter.emit({type:ProductActionType.SEARCH_PRODUCTS})
+getProductsSearch(dataForm:NgForm){
+  console.log('-------------dataForm----',dataForm.value)
+  this.productEventEmitter.emit({type:ProductActionType.SEARCH_PRODUCTS,payload:dataForm})
 }
 
 }
